@@ -1,0 +1,359 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-152.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
+
+    <title>Survey Results: The (R)evolutionary Role of Social Media in Software Engineering</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/grid.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>The following help me stay UP TO DATE about technologies, practices and tools for software development.</h1>
+        <div id="chart-uptodate" style="width: 750px; height: 750px;"></div>
+        <h1>The following help me FIND ANSWERS to technical questions.</h1>
+        <div id="chart-answers" style="width: 750px; height: 750px;"></div>
+        <h1>The following help me LEARN and improve my skills.</h1>
+        <div id="chart-learn" style="width: 750px; height: 750px;"></div>
+        <h1>The following help me DISCOVER interesting developers.</h1>
+        <div id="chart-discover" style="width: 750px; height: 750px;"></div>
+        <h1>The following help me CONNECT with interesting developers.</h1>
+        <div id="chart-connect" style="width: 750px; height: 750px;"></div>
+        <h1>The following are useful for getting and giving FEEDBACK.</h1>
+        <div id="chart-feedback" style="width: 750px; height: 750px;"></div>
+        <h1>I use the following to PUBLISH my development activities.</h1>
+        <div id="chart-publish" style="width: 750px; height: 750px;"></div>
+        <h1>I use the following to WATCH other developers' activities.</h1>
+        <div id="chart-watch" style="width: 750px; height: 750px;"></div>
+        <h1>I use the following to display my SKILLS/ACCOMPLISHMENTS.</h1>
+        <div id="chart-displayskills" style="width: 750px; height: 750px;"></div>
+        <h1>I use the following to ASSESS other developers.</h1>
+        <div id="chart-assess" style="width: 750px; height: 750px;"></div>
+        <h1>I use the following tools to COORDINATE with other developers when I am participating on projects.</h1>
+        <div id="chart-coordinate" style="width: 750px; height: 750px;"></div>
+        <h1>I use the following tools on a MOBILE DEVICE (smartphone, tablet) for development-related activities.</h1>
+        <div id="chart-mobile" style="width: 750px; height: 750px;"></div>
+        <h1>What are the 3 most important channels for software development activities?</h1>
+        <p>
+          For the "3 most important channels" question, I counted every mention of a channel as a vote, regardless of 1st, 2nd, or 3rd position. 
+        </p>
+        <div id="chart" style="width: 750px; height: 750px;"></div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/radar-chart-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      var d = [
+                [
+{axis: "Face-to-face communication", value: 508}, 
+{axis: "Books and Magazines", value: 109}, 
+{axis: "Web Search", value: 429}, 
+{axis: "News Aggregators", value: 156}, 
+{axis: "Feeds and Blogs", value: 187}, 
+{axis: "Content Recommenders", value: 6}, 
+{axis: "Social Bookmarking", value: 3}, 
+{axis: "Rich Content", value: 38}, 
+{axis: "Discussion Groups", value: 166}, 
+{axis: "Private Discussions", value: 176}, 
+{axis: "Public Chat", value: 175}, 
+{axis: "Private Chat", value: 191}, 
+{axis: "Professional Networking Sites", value: 15}, 
+{axis: "Developer Profile Sites", value: 17}, 
+{axis: "Social Network Sites", value: 63}, 
+{axis: "Microblogs", value: 217}, 
+{axis: "Code Hosting Sites", value: 1004}, 
+{axis: "Project Coordination Tools", value: 105}, 
+{axis: "Question & Answer Sites", value: 491}
+                ]
+              ];
+      RadarChart.draw("#chart", d);
+
+      var d_uptodate = [[
+{axis: "Face-to-face communication", value: 861}, 
+{axis: "Books and Magazines", value: 460}, 
+{axis: "Web Search", value: 1055}, 
+{axis: "News Aggregators", value: 758}, 
+{axis: "Feeds and Blogs", value: 893}, 
+{axis: "Content Recommenders", value: 124}, 
+{axis: "Social Bookmarking", value: 116}, 
+{axis: "Rich Content", value: 446}, 
+{axis: "Discussion Groups", value: 641}, 
+{axis: "Private Discussions", value: 540}, 
+{axis: "Public Chat", value: 384}, 
+{axis: "Private Chat", value: 493}, 
+{axis: "Professional Networking Sites", value: 232}, 
+{axis: "Developer Profile Sites", value: 240}, 
+{axis: "Social Network Sites", value: 534}, 
+{axis: "Microblogs", value: 621}, 
+{axis: "Code Hosting Sites", value: 1054}, 
+{axis: "Project Coordination Tools", value: 143}, 
+{axis: "Question & Answer Sites", value: 788}
+      ]];RadarChart.draw("#chart-uptodate", d_uptodate);
+
+      var d_answers = [[
+{axis: "Face-to-face communication", value: 707}, 
+{axis: "Books and Magazines", value: 282}, 
+{axis: "Web Search", value: 1269}, 
+{axis: "News Aggregators", value: 95}, 
+{axis: "Feeds and Blogs", value: 337}, 
+{axis: "Content Recommenders", value: 16}, 
+{axis: "Social Bookmarking", value: 24}, 
+{axis: "Rich Content", value: 131}, 
+{axis: "Discussion Groups", value: 611}, 
+{axis: "Private Discussions", value: 435}, 
+{axis: "Public Chat", value: 426}, 
+{axis: "Private Chat", value: 425}, 
+{axis: "Professional Networking Sites", value: 40}, 
+{axis: "Developer Profile Sites", value: 111}, 
+{axis: "Social Network Sites", value: 131}, 
+{axis: "Microblogs", value: 226}, 
+{axis: "Code Hosting Sites", value: 733}, 
+{axis: "Project Coordination Tools", value: 106}, 
+{axis: "Question & Answer Sites", value: 1231}
+      ]];RadarChart.draw("#chart-answers", d_answers);
+
+      var d_learn = [[
+{axis: "Face-to-face communication", value: 692}, 
+{axis: "Books and Magazines", value: 742}, 
+{axis: "Web Search", value: 1002}, 
+{axis: "News Aggregators", value: 441}, 
+{axis: "Feeds and Blogs", value: 721}, 
+{axis: "Content Recommenders", value: 76}, 
+{axis: "Social Bookmarking", value: 62}, 
+{axis: "Rich Content", value: 468}, 
+{axis: "Discussion Groups", value: 502}, 
+{axis: "Private Discussions", value: 345}, 
+{axis: "Public Chat", value: 317}, 
+{axis: "Private Chat", value: 314}, 
+{axis: "Professional Networking Sites", value: 85}, 
+{axis: "Developer Profile Sites", value: 162}, 
+{axis: "Social Network Sites", value: 231}, 
+{axis: "Microblogs", value: 358}, 
+{axis: "Code Hosting Sites", value: 935}, 
+{axis: "Project Coordination Tools", value: 89}, 
+{axis: "Question & Answer Sites", value: 936}
+      ]];RadarChart.draw("#chart-learn", d_learn);
+
+      var d_discover = [[
+{axis: "Face-to-face communication", value: 549}, 
+{axis: "Books and Magazines", value: 136}, 
+{axis: "Web Search", value: 442}, 
+{axis: "News Aggregators", value: 391}, 
+{axis: "Feeds and Blogs", value: 549}, 
+{axis: "Content Recommenders", value: 59}, 
+{axis: "Social Bookmarking", value: 48}, 
+{axis: "Rich Content", value: 215}, 
+{axis: "Discussion Groups", value: 413}, 
+{axis: "Private Discussions", value: 184}, 
+{axis: "Public Chat", value: 285}, 
+{axis: "Private Chat", value: 175}, 
+{axis: "Professional Networking Sites", value: 186}, 
+{axis: "Developer Profile Sites", value: 158}, 
+{axis: "Social Network Sites", value: 356}, 
+{axis: "Microblogs", value: 583}, 
+{axis: "Code Hosting Sites", value: 1023}, 
+{axis: "Project Coordination Tools", value: 58}, 
+{axis: "Question & Answer Sites", value: 489}
+      ]];RadarChart.draw("#chart-discover", d_discover);
+
+      var d_connect = [[
+{axis: "Face-to-face communication", value: 504}, 
+{axis: "Books and Magazines", value: 27}, 
+{axis: "Web Search", value: 113}, 
+{axis: "News Aggregators", value: 110}, 
+{axis: "Feeds and Blogs", value: 220}, 
+{axis: "Content Recommenders", value: 14}, 
+{axis: "Social Bookmarking", value: 24}, 
+{axis: "Rich Content", value: 39}, 
+{axis: "Discussion Groups", value: 371}, 
+{axis: "Private Discussions", value: 482}, 
+{axis: "Public Chat", value: 415}, 
+{axis: "Private Chat", value: 331}, 
+{axis: "Professional Networking Sites", value: 229}, 
+{axis: "Developer Profile Sites", value: 83}, 
+{axis: "Social Network Sites", value: 408}, 
+{axis: "Microblogs", value: 552}, 
+{axis: "Code Hosting Sites", value: 896}, 
+{axis: "Project Coordination Tools", value: 75}, 
+{axis: "Question & Answer Sites", value: 331}
+      ]];RadarChart.draw("#chart-connect", d_connect);
+
+      var d_feedback = [[
+{axis: "Face-to-face communication", value: 586}, 
+{axis: "Books and Magazines", value: 16}, 
+{axis: "Web Search", value: 63}, 
+{axis: "News Aggregators", value: 120}, 
+{axis: "Feeds and Blogs", value: 163}, 
+{axis: "Content Recommenders", value: 11}, 
+{axis: "Social Bookmarking", value: 17}, 
+{axis: "Rich Content", value: 21}, 
+{axis: "Discussion Groups", value: 488}, 
+{axis: "Private Discussions", value: 575}, 
+{axis: "Public Chat", value: 369}, 
+{axis: "Private Chat", value: 389}, 
+{axis: "Professional Networking Sites", value: 62}, 
+{axis: "Developer Profile Sites", value: 60}, 
+{axis: "Social Network Sites", value: 254}, 
+{axis: "Microblogs", value: 383}, 
+{axis: "Code Hosting Sites", value: 974}, 
+{axis: "Project Coordination Tools", value: 208}, 
+{axis: "Question & Answer Sites", value: 524}
+      ]];RadarChart.draw("#chart-feedback", d_feedback);
+
+      var d_publish = [[
+{axis: "Face-to-face communication", value: 257}, 
+{axis: "Books and Magazines", value: 21}, 
+{axis: "Web Search", value: 46}, 
+{axis: "News Aggregators", value: 106}, 
+{axis: "Feeds and Blogs", value: 414}, 
+{axis: "Content Recommenders", value: 9}, 
+{axis: "Social Bookmarking", value: 27}, 
+{axis: "Rich Content", value: 37}, 
+{axis: "Discussion Groups", value: 243}, 
+{axis: "Private Discussions", value: 205}, 
+{axis: "Public Chat", value: 151}, 
+{axis: "Private Chat", value: 167}, 
+{axis: "Professional Networking Sites", value: 183}, 
+{axis: "Developer Profile Sites", value: 105}, 
+{axis: "Social Network Sites", value: 366}, 
+{axis: "Microblogs", value: 526}, 
+{axis: "Code Hosting Sites", value: 1255}, 
+{axis: "Project Coordination Tools", value: 102}, 
+{axis: "Question & Answer Sites", value: 158}
+      ]];RadarChart.draw("#chart-publish", d_publish);
+
+      var d_watch = [[
+{axis: "Face-to-face communication", value: 176}, 
+{axis: "Books and Magazines", value: 58}, 
+{axis: "Web Search", value: 166}, 
+{axis: "News Aggregators", value: 242}, 
+{axis: "Feeds and Blogs", value: 506}, 
+{axis: "Content Recommenders", value: 31}, 
+{axis: "Social Bookmarking", value: 27}, 
+{axis: "Rich Content", value: 87}, 
+{axis: "Discussion Groups", value: 294}, 
+{axis: "Private Discussions", value: 108}, 
+{axis: "Public Chat", value: 158}, 
+{axis: "Private Chat", value: 93}, 
+{axis: "Professional Networking Sites", value: 104}, 
+{axis: "Developer Profile Sites", value: 93}, 
+{axis: "Social Network Sites", value: 313}, 
+{axis: "Microblogs", value: 560}, 
+{axis: "Code Hosting Sites", value: 1214}, 
+{axis: "Project Coordination Tools", value: 135}, 
+{axis: "Question & Answer Sites", value: 175}
+      ]];RadarChart.draw("#chart-watch", d_watch);
+
+      var d_displayskills = [[
+{axis: "Face-to-face communication", value: 216}, 
+{axis: "Books and Magazines", value: 28}, 
+{axis: "Web Search", value: 46}, 
+{axis: "News Aggregators", value: 61}, 
+{axis: "Feeds and Blogs", value: 331}, 
+{axis: "Content Recommenders", value: 7}, 
+{axis: "Social Bookmarking", value: 20}, 
+{axis: "Rich Content", value: 31}, 
+{axis: "Discussion Groups", value: 105}, 
+{axis: "Private Discussions", value: 108}, 
+{axis: "Public Chat", value: 79}, 
+{axis: "Private Chat", value: 86}, 
+{axis: "Professional Networking Sites", value: 533}, 
+{axis: "Developer Profile Sites", value: 175}, 
+{axis: "Social Network Sites", value: 349}, 
+{axis: "Microblogs", value: 377}, 
+{axis: "Code Hosting Sites", value: 1030}, 
+{axis: "Project Coordination Tools", value: 47}, 
+{axis: "Question & Answer Sites", value: 208}
+      ]];RadarChart.draw("#chart-displayskills", d_displayskills);
+
+      var d_assess = [[
+{axis: "Face-to-face communication", value: 402}, 
+{axis: "Books and Magazines", value: 56}, 
+{axis: "Web Search", value: 238}, 
+{axis: "News Aggregators", value: 69}, 
+{axis: "Feeds and Blogs", value: 334}, 
+{axis: "Content Recommenders", value: 14}, 
+{axis: "Social Bookmarking", value: 18}, 
+{axis: "Rich Content", value: 57}, 
+{axis: "Discussion Groups", value: 245}, 
+{axis: "Private Discussions", value: 258}, 
+{axis: "Public Chat", value: 178}, 
+{axis: "Private Chat", value: 210}, 
+{axis: "Professional Networking Sites", value: 267}, 
+{axis: "Developer Profile Sites", value: 122}, 
+{axis: "Social Network Sites", value: 221}, 
+{axis: "Microblogs", value: 339}, 
+{axis: "Code Hosting Sites", value: 1063}, 
+{axis: "Project Coordination Tools", value: 98}, 
+{axis: "Question & Answer Sites", value: 393}
+      ]];RadarChart.draw("#chart-assess", d_assess);
+
+      var d_coordinate = [[
+{axis: "Face-to-face communication", value: 559}, 
+{axis: "Books and Magazines", value: 9}, 
+{axis: "Web Search", value: 22}, 
+{axis: "News Aggregators", value: 15}, 
+{axis: "Feeds and Blogs", value: 29}, 
+{axis: "Content Recommenders", value: 3}, 
+{axis: "Social Bookmarking", value: 9}, 
+{axis: "Rich Content", value: 14}, 
+{axis: "Discussion Groups", value: 336}, 
+{axis: "Private Discussions", value: 755}, 
+{axis: "Public Chat", value: 384}, 
+{axis: "Private Chat", value: 699}, 
+{axis: "Professional Networking Sites", value: 20}, 
+{axis: "Developer Profile Sites", value: 13}, 
+{axis: "Social Network Sites", value: 141}, 
+{axis: "Microblogs", value: 114}, 
+{axis: "Code Hosting Sites", value: 1172}, 
+{axis: "Project Coordination Tools", value: 472}, 
+{axis: "Question & Answer Sites", value: 66}
+      ]];RadarChart.draw("#chart-coordinate", d_coordinate);
+
+      var d_mobile = [[
+{axis: "Face-to-face communication", value: 53}, 
+{axis: "Books and Magazines", value: 115}, 
+{axis: "Web Search", value: 424}, 
+{axis: "News Aggregators", value: 271}, 
+{axis: "Feeds and Blogs", value: 341}, 
+{axis: "Content Recommenders", value: 51}, 
+{axis: "Social Bookmarking", value: 39}, 
+{axis: "Rich Content", value: 121}, 
+{axis: "Discussion Groups", value: 186}, 
+{axis: "Private Discussions", value: 504}, 
+{axis: "Public Chat", value: 105}, 
+{axis: "Private Chat", value: 371}, 
+{axis: "Professional Networking Sites", value: 112}, 
+{axis: "Developer Profile Sites", value: 30}, 
+{axis: "Social Network Sites", value: 287}, 
+{axis: "Microblogs", value: 455}, 
+{axis: "Code Hosting Sites", value: 511}, 
+{axis: "Project Coordination Tools", value: 133}, 
+{axis: "Question & Answer Sites", value: 219}
+      ]];RadarChart.draw("#chart-mobile", d_mobile);
+
+    });
+    </script>
+  </body>
+</html>
