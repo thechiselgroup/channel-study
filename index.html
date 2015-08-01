@@ -679,9 +679,8 @@ var BarChart = {
         $("#chart-"+radars[i]+"-right").remove();
         $("#chart-"+radars[i]+"-right-container").append("<div id=\"chart-"+radars[i]+"-right\"></div>");
       };
-  
-      //d3.csv("devsurvey-sample.csv", function(d) {
-      d3.csv("devsurvey.csv", function(d) {
+
+      d3.csv("devsurvey-2013_2014.csv", function(d) {
         var row = {
           id: parseInt(d.id),
           source: d.source,
