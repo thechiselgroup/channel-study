@@ -546,11 +546,6 @@ var BarChart = {
       ;
   }
 };
-    if ( typeof String.prototype.contains === 'undefined' ) {
-      String.prototype.contains = function(it) {
-        return this.indexOf(it) !== -1;
-      };
-    }
     var selectAllLeft = function() {
       $('#filter-left input').prop('checked', true);
     };
@@ -616,7 +611,7 @@ var BarChart = {
       // checks whether row should be counted given the current filters for direction (left/right)
       var status_values = ["basics_develop_software_prof", "basics_develop_software_pet", "basics_develop_software_oss"];
       for (var i = status_values.length - 1; i >= 0; i--) {
-        if ( row.status.contains(status_values[i]) && !$("#filter-status-" + direction + "-" + status_values[i]).prop("checked") ) {
+        if ( row.status.includes(status_values[i]) && !$("#filter-status-" + direction + "-" + status_values[i]).prop("checked") ) {
           return false;
         }
       };
