@@ -63,10 +63,10 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 text-right">
+<!--               <div class="col-md-6 text-right">
                 Team Size
               </div>
-              <div class="col-md-6" id="filter-teamsize-left">
+ -->              <div class="col-md-6" id="filter-teamsize-left">
                  <input type="checkbox" checked="checked" name="filter-teamsize-left-solo" id="filter-teamsize-left-solo"> solo (XX)<br>
                  <input type="checkbox" checked="checked" name="filter-teamsize-left-2to3" id="filter-teamsize-left-2to3"> 2-3 (XX)<br>
                  <input type="checkbox" checked="checked" name="filter-teamsize-left-4to5" id="filter-teamsize-left-4to5"> 4-5 (XX)<br>
@@ -140,10 +140,10 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 text-right">
+<!--               <div class="col-md-6 text-right">
                 Team Size
               </div>
-              <div class="col-md-6" id="filter-teamsize-right">
+ -->              <div class="col-md-6" id="filter-teamsize-right">
                  <input type="checkbox" checked="checked" name="filter-teamsize-right-solo" id="filter-teamsize-right-solo"> solo (XX)<br>
                  <input type="checkbox" checked="checked" name="filter-teamsize-right-2to3" id="filter-teamsize-right-2to3"> 2-3 (XX)<br>
                  <input type="checkbox" checked="checked" name="filter-teamsize-right-4to5" id="filter-teamsize-right-4to5"> 4-5 (XX)<br>
@@ -207,7 +207,7 @@
             <div id="chart-gender-right-container"><div id="chart-gender-right"></div></div>
           </div>
         </div>
-        <h2>Team Size</h2>
+        <!-- <h2>Team Size</h2> -->
         <div class="row">
           <div class="col-md-6">
             <div id="chart-teamsize-left-container"><div id="chart-teamsize-left"></div></div>
@@ -696,7 +696,8 @@ var BarChart = {
           challenge_privacy: d.challenges_privacy,
           challenge_overwhelm: d.challenges_overwhelm,
           challenge_distraction: d.challenges_distract,
-          teamsize: d.team_size_LRG,
+          // teamsize: "d.team_size_LRG",
+          teamsize: "solo",
           region: d.closing_country
         };
         for (var i = 0, len1 = radars.length; i < len1; i++) {
@@ -932,10 +933,10 @@ var BarChart = {
         BarChart.draw("#chart-age-left", Object.keys(barData.age.left).map(function (key) {return {label: labelForKey(key), value: barData.age.left[key]/respondents_left};}), {max: bar_age_max});
         BarChart.draw("#chart-age-right", Object.keys(barData.age.right).map(function (key) {return {label: labelForKey(key), value: barData.age.right[key]/respondents_right};}), {max: bar_age_max});
 
-        bar_teamsize_max = 0.001 + (Math.ceil(10 * Math.max(d3.max(Object.keys(barData.teamsize.left), function(key) { return barData.teamsize.left[key]; })/respondents_left, d3.max(Object.keys(barData.teamsize.right), function(key) { return barData.teamsize.right[key]; })/respondents_right)) / 10);
+        // bar_teamsize_max = 0.001 + (Math.ceil(10 * Math.max(d3.max(Object.keys(barData.teamsize.left), function(key) { return barData.teamsize.left[key]; })/respondents_left, d3.max(Object.keys(barData.teamsize.right), function(key) { return barData.teamsize.right[key]; })/respondents_right)) / 10);
 
-        BarChart.draw("#chart-teamsize-left", Object.keys(barData.teamsize.left).map(function (key) {return {label: labelForKey(key), value: barData.teamsize.left[key]/respondents_left};}), {max: bar_teamsize_max});
-        BarChart.draw("#chart-teamsize-right", Object.keys(barData.teamsize.right).map(function (key) {return {label: labelForKey(key), value: barData.teamsize.right[key]/respondents_right};}), {max: bar_teamsize_max});
+        // BarChart.draw("#chart-teamsize-left", Object.keys(barData.teamsize.left).map(function (key) {return {label: labelForKey(key), value: barData.teamsize.left[key]/respondents_left};}), {max: bar_teamsize_max});
+        // BarChart.draw("#chart-teamsize-right", Object.keys(barData.teamsize.right).map(function (key) {return {label: labelForKey(key), value: barData.teamsize.right[key]/respondents_right};}), {max: bar_teamsize_max});
 
         bar_region_max = 0.001 + (Math.ceil(10 * Math.max(d3.max(Object.keys(barData.region.left), function(key) { return barData.region.left[key]; })/respondents_left, d3.max(Object.keys(barData.region.right), function(key) { return barData.region.right[key]; })/respondents_right)) / 10);
 
